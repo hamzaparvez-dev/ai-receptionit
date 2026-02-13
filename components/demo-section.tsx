@@ -8,38 +8,24 @@ import { useState, useRef } from "react"
 const voiceSamples = [
   {
     id: 1,
-    name: "Real Estate Agent",
-    description: "Professional and persuasive voice for property inquiries",
+    name: "New Buyer Inquiry",
+    description: "First-time buyer calling about new listings",
     url: "https://res.cloudinary.com/dij5outes/video/upload/v1758876389/RealEstateAgents_nwtorv.mp3",
-    scenario: "Property consultations",
+    scenario: "Lead qualification",
   },
   {
     id: 2,
-    name: "Physio Agent",
-    description: "Caring and knowledgeable voice for healthcare services",
+    name: "Missed Call Recovery",
+    description: "AI reconnecting with leads who called after hours",
     url: "https://res.cloudinary.com/dij5outes/video/upload/v1758876375/Pysio-agent_suqlck.mp3",
-    scenario: "Appointment scheduling",
+    scenario: "Follow-up calls",
   },
   {
     id: 3,
-    name: "Marketing Agency",
-    description: "Dynamic and engaging voice for creative services",
+    name: "Rental Inquiry",
+    description: "Investor asking about rental properties",
     url: "https://res.cloudinary.com/dij5outes/video/upload/v1758876368/Marketing-Agency_ronynp.mp3",
-    scenario: "Client consultations",
-  },
-  {
-    id: 4,
-    name: "Legend Physio Voice",
-    description: "Expert and reassuring voice for specialized treatments",
-    url: "https://res.cloudinary.com/dij5outes/video/upload/v1758875710/Legend_Physio_Voice_Agent_dvxr6c.mp3",
-    scenario: "Treatment inquiries",
-  },
-  {
-    id: 5,
-    name: "Professional Savannah",
-    description: "Warm and professional voice for Pysiotherapy business inquiries",
-    url: "https://res.cloudinary.com/dij5outes/video/upload/v1757866506/voice1_aazx8x.mp4",
-    scenario: "Customer service",
+    scenario: "Investment leads",
   },
 ]
 
@@ -93,42 +79,40 @@ export function DemoSection() {
   }
 
   return (
-    <section id="demo" className="py-24 bg-gradient-to-br from-green-950/20 to-emerald-950/10">
+    <section id="demo" className="py-24 bg-gradient-to-br from-cyan-950/20 to-blue-950/10">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6 text-white">
-            Experience Our AI - <span className="text-green-400">Live Demo & Voice Samples</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 heading-primary text-white">
+            Listen to <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">Real Estate AI Calls</span>
           </h2>
-          <p className="text-xl text-gray-100 max-w-3xl mx-auto text-balance leading-relaxed font-medium">
-            See and hear exactly how our AI receptionist handles real customer interactions. Choose from 5 professional
-            voices and watch complete call scenarios from various business types.
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto text-balance leading-relaxed text-premium font-medium">
+            Hear exactly how our AI qualifies leads and books showings. No scripts, no long hold times—just real results.
           </p>
         </div>
 
         <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-white">Choose Your AI Voice</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-6 max-w-6xl mx-auto">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {voiceSamples.map((voice) => (
               <Card
                 key={voice.id}
-                className="p-6 hover:shadow-lg transition-all duration-300 bg-green-500/10 border-green-400/20 hover:border-green-400/40 hover:shadow-green-500/20"
+                className="p-8 hover:shadow-lg transition-all duration-300 bg-cyan-500/10 border-cyan-400/20 hover:border-cyan-400/40 hover:shadow-cyan-500/20 glass-card"
               >
                 <div className="text-center">
-                  <div className="w-16 h-16 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
+                  <div className="w-16 h-16 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
                     <button
                       onClick={() => handleVoicePlay(voice.id)}
-                      className="w-full h-full rounded-full flex items-center justify-center hover:bg-green-500/30 transition-colors"
+                      className="w-full h-full rounded-full flex items-center justify-center hover:bg-cyan-500/30 transition-colors"
                     >
                       {playingVoice === voice.id ? (
-                        <Pause className="h-6 w-6 text-green-400" />
+                        <Pause className="h-6 w-6 text-cyan-400" />
                       ) : (
-                        <Volume2 className="h-6 w-6 text-green-400" />
+                        <Volume2 className="h-6 w-6 text-cyan-400" />
                       )}
                     </button>
                   </div>
-                  <h4 className="font-semibold text-sm mb-2 text-white">{voice.name}</h4>
-                  <p className="text-xs text-gray-200 mb-3">{voice.description}</p>
-                  <div className="text-xs text-green-400 font-medium bg-green-500/20 px-2 py-1 rounded-full">
+                  <h4 className="font-bold text-lg mb-2 text-white">{voice.name}</h4>
+                  <p className="text-sm text-gray-300 mb-3 text-premium">{voice.description}</p>
+                  <div className="text-xs text-cyan-400 font-semibold bg-cyan-500/20 px-3 py-2 rounded-full inline-block">
                     {voice.scenario}
                   </div>
 
@@ -148,74 +132,33 @@ export function DemoSection() {
           </div>
         </div>
 
-        <div className="mb-16">
-          <h3 className="text-2xl font-bold text-center mb-8 text-white">What You'll See in the Demo</h3>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {demoFeatures.map((feature, index) => (
-              <Card
-                key={index}
-                className="p-6 text-center bg-green-500/10 border-green-400/20 hover:shadow-lg transition-all duration-300 hover:border-green-400/40 hover:shadow-green-500/20"
-              >
-                <div className="w-12 h-12 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-4">
-                  <feature.icon className="h-6 w-6 text-green-400" />
-                </div>
-                <h4 className="font-semibold mb-2 text-white">{feature.title}</h4>
-                <p className="text-sm text-gray-200">{feature.description}</p>
-              </Card>
-            ))}
-          </div>
-        </div>
-
-        <Card className="max-w-4xl mx-auto p-12 bg-gradient-to-br from-green-500/20 to-emerald-500/10 border-green-400/30 shadow-lg">
+        <Card className="max-w-4xl mx-auto p-12 bg-gradient-to-br from-cyan-500/20 to-blue-500/10 border-cyan-400/30 shadow-lg glass-card">
           <div className="text-center">
-            <div className="w-24 h-24 bg-green-500/20 rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse-glow">
-              <Play className="h-12 w-12 text-green-400" />
+            <div className="w-24 h-24 bg-cyan-500/20 rounded-full flex items-center justify-center mx-auto mb-8 animate-pulse-glow">
+              <Phone className="h-12 w-12 text-cyan-400" />
             </div>
 
-            <h3 className="text-3xl font-bold mb-4 text-white">Complete System Walkthrough</h3>
-            <p className="text-lg text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-              Watch our AI handle complete customer interactions from initial call to appointment booking. See the admin
-              dashboard, real-time analytics, and integration with your business management system.
+            <h3 className="text-3xl font-bold mb-4 text-white heading-primary">Ready to See Real Results?</h3>
+            <p className="text-lg text-gray-100 mb-8 max-w-2xl mx-auto leading-relaxed text-premium font-medium">
+              Watch live AI calling in action. See how qualified leads get booked automatically.
             </p>
 
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-8">
               <Button
                 size="lg"
-                className="bg-primary hover:bg-primary/90 text-lg px-8 py-4"
-                onClick={() =>
-                  window.open("https://excalidraw.com/#json=EqjgvRHBRK69-yXCGVYyR,GWI1VxddOIn8yetwBGK4Wg", "_blank")
-                }
+                className="bg-gradient-to-r from-cyan-600 to-blue-600 hover:from-cyan-700 hover:to-blue-700 text-white text-lg px-8 py-4 rounded-xl font-bold shadow-2xl"
+                onClick={() => document.getElementById("cta")?.scrollIntoView({ behavior: "smooth" })}
               >
-                <Play className="mr-2 h-5 w-5" />
-                Watch Full System Demo
+                <Phone className="mr-2 h-5 w-5" />
+                Book Demo
               </Button>
               <Button
                 size="lg"
                 variant="outline"
-                className="text-lg px-8 py-4 border-border hover:bg-card bg-transparent"
-                onClick={() => window.open("https://calendly.com/genuinestack/new-meeting", "_blank")}
+                className="text-lg px-8 py-4 border-cyan-400 text-cyan-400 hover:bg-cyan-500/10 bg-transparent"
               >
-                <ExternalLink className="mr-2 h-5 w-5" />
-                Schedule Personal Demo
+                Call Us
               </Button>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm">
-              <div className="flex flex-col items-center space-y-2 p-4 bg-green-500/10 rounded-lg border border-green-400/20">
-                <div className="w-3 h-3 bg-green-400 rounded-full" />
-                <span className="font-medium text-white">15-minute comprehensive walkthrough</span>
-                <span className="text-gray-200 text-xs">Complete system overview</span>
-              </div>
-              <div className="flex flex-col items-center space-y-2 p-4 bg-green-500/10 rounded-lg border border-green-400/20">
-                <div className="w-3 h-3 bg-green-400 rounded-full" />
-                <span className="font-medium text-white">No signup or installation required</span>
-                <span className="text-gray-200 text-xs">Instant access</span>
-              </div>
-              <div className="flex flex-col items-center space-y-2 p-4 bg-green-500/10 rounded-lg border border-green-400/20">
-                <div className="w-3 h-3 bg-green-400 rounded-full" />
-                <span className="font-medium text-white">Real business scenarios</span>
-                <span className="text-gray-200 text-xs">Industry-specific examples</span>
-              </div>
             </div>
           </div>
         </Card>

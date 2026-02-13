@@ -33,30 +33,36 @@ export function Navigation() {
             <span className="text-2xl font-black text-white tracking-tight">GenuineStack</span>
           </div>
 
-          <div className="hidden md:flex items-center space-x-8">
+          <div className="hidden md:flex items-center space-x-6">
             <button
               onClick={() => scrollToSection("problems")}
-              className="text-gray-200 hover:text-white transition-colors font-semibold text-lg"
+              className="text-gray-200 hover:text-white transition-colors font-semibold text-base"
             >
               Problems
             </button>
             <button
               onClick={() => scrollToSection("solution")}
-              className="text-gray-200 hover:text-white transition-colors font-semibold text-lg"
+              className="text-gray-200 hover:text-white transition-colors font-semibold text-base"
             >
-              Solution
+              How It Works
             </button>
             <button
               onClick={() => scrollToSection("demo")}
-              className="text-gray-200 hover:text-white transition-colors font-semibold text-lg"
+              className="text-gray-200 hover:text-white transition-colors font-semibold text-base"
             >
               Demo
             </button>
             <button
-              onClick={() => scrollToSection("roi")}
-              className="text-gray-200 hover:text-white transition-colors font-semibold text-lg"
+              onClick={() => scrollToSection("pricing")}
+              className="text-gray-200 hover:text-white transition-colors font-semibold text-base"
             >
-              ROI
+              Pricing
+            </button>
+            <button
+              onClick={() => scrollToSection("integrations")}
+              className="text-gray-200 hover:text-white transition-colors font-semibold text-base"
+            >
+              Integrations
             </button>
           </div>
 

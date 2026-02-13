@@ -6,56 +6,54 @@ import { ArrowRight } from "lucide-react"
 const workflowSteps = [
   {
     step: "1",
-    title: "Patient Calls",
-    description: '"Hi, I need to book a physiotherapy appointment for my back pain"',
+    title: "Lead Comes from Zillow, Facebook, or Website",
+    description: "Buyers submit inquiries through your marketing channels",
     type: "patient",
   },
   {
     step: "2",
-    title: "AI Responds",
-    description:
-      "\"I'd be happy to help you book an appointment. Can you tell me about your back pain and when you'd prefer to come in?\"",
+    title: "AI Calls Within 30 Seconds",
+    description: "Automatic outbound call beats all other agents to first contact",
     type: "ai",
   },
   {
     step: "3",
-    title: "AI Qualifies",
-    description: "Asks about injury type, insurance, urgency, and availability preferences",
+    title: "AI Asks Budget, Location, Timeline",
+    description: "Qualifies buyer interest, property preferences, and urgency in real time",
     type: "process",
   },
   {
     step: "4",
-    title: "Smart Scheduling",
-    description:
-      '"I have Thursday at 2 PM with Dr. Smith who specializes in back injuries. Shall I book that for you?"',
+    title: "AI Books Showing on Your Calendar",
+    description: "Schedules appointment directly into your CRM and calendar system",
     type: "ai",
   },
   {
     step: "5",
-    title: "Confirmation",
-    description: "Books appointment, sends confirmation text/email, adds to your calendar system",
+    title: "SMS Confirmation Sent",
+    description: "Buyer gets instant confirmation text with address, time, and agent details",
     type: "process",
   },
   {
     step: "6",
-    title: "Follow-up",
-    description: "Sends appointment reminders and intake forms before visit",
+    title: "Agent Notified Instantly",
+    description: "You receive real-time notification with qualified lead information ready to show",
     type: "automation",
   },
 ]
 
 export function WorkflowSection() {
   return (
-    <section className="py-24">
+    <section id="solution" className="py-24">
       <div className="max-w-7xl mx-auto px-6">
         <div className="text-center mb-16">
-          <h2 className="text-4xl md:text-5xl font-bold mb-6">
-            How It Works - <span className="gradient-text">Step by Step</span>
+          <h2 className="text-4xl md:text-5xl font-bold mb-6 heading-primary text-white">
+            How GenuineStack <span className="bg-gradient-to-r from-cyan-400 to-blue-400 bg-clip-text text-transparent">AI Calling Works</span>
           </h2>
-          <p className="text-xl text-muted-foreground max-w-3xl mx-auto text-balance">
-            Follow a real patient interaction from initial call to completed booking. See how our AI handles complex
-            scenarios with human-like intelligence.
+          <p className="text-xl text-gray-200 max-w-3xl mx-auto text-balance text-premium font-medium">
+            Real-time AI calling that qualifies leads and books showings automatically.
           </p>
+          <p className="text-base text-gray-400 mt-3 text-premium font-medium">Setup takes 5 days.</p>
         </div>
 
         <div className="max-w-4xl mx-auto">

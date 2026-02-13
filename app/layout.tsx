@@ -18,9 +18,9 @@ const playfair = Playfair_Display({
 })
 
 export const metadata: Metadata = {
-  title: "AI Receptionist Solution - Transform Your Business | GenuineStack",
+  title: "AI Calling for Real Estate | GenuineStack - Books Showings in 30 Seconds",
   description:
-    "Never miss another customer call. Our AI receptionist handles appointments, inquiries, and customer management 24/7 for any business.",
+    "Stop losing Zillow and Facebook leads. AI calls your real estate leads in 30 seconds, qualifies buyers, and books showings automatically 24/7.",
     generator: 'v0.app'
 }
 
